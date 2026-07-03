@@ -1,0 +1,47 @@
+# Post-fix benchmark: MASE-CV + per-series adaptive TSCV (v2).
+# Output-path settings for the benchmark -- the TSCV
+# refinement (per-series adaptive folds, no global drop) lives in tree.py and
+# applies to any cv_type='timeseries' run. Outputs land in fresh v2 dirs so v1
+# results stay quarantined for comparison.
+
+data_path: data/
+results_path: results/
+info_table: data/repo_data_info.xlsx
+
+result_prefix: benchmark
+forecast_dir: forecasts_benchmark
+cv_dir: full_tuning_benchmark
+
+nthreads: 1
+test_horizon: 1
+n_diff: 1
+diff_features: false
+seed: 10
+cv_type: timeseries
+aggregation: score
+cv_metric: mase
+
+max_depth: 40
+min_samples_leaf: 5
+n_discrete_lev: 32
+
+nfolds: 5
+min_depth: 4
+depth_increment: 4
+
+decay_set: [0, 0.5, 1]
+lambda_set: [0, 0.2, 0.5]
+beta_set: [0, 0.2, 0.5]
+
+bdt:
+  n_estimators: 400
+  lr: 0.05
+  bagging_fraction: 0.8
+  feature_fraction: 0.5
+  max_depth: 8
+
+rf:
+  n_estimators: 400
+  bagging_fraction: 0.8
+  feature_fraction: 0.5
+  max_depth: 40

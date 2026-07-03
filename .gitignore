@@ -1,0 +1,35 @@
+# Build artifacts
+build/
+*.egg-info/
+*.so
+*.pyc
+__pycache__/
+.pytest_cache/
+
+# Compiled Cython output (regenerated from .pyx) — ONLY the generated kernels.
+# Hand-written sources (simd_helpers.cpp, sort_cpp.cpp) have no .pyx and MUST
+# be tracked, so do not use a broad *.cpp glob here.
+mttrees/cfuncs_fast/mt_ctree_prebin.cpp
+mttrees/cfuncs_fast/mt_ctree_prebin_f32.cpp
+mttrees/cfuncs_fast/mt_ctree_selfhash.cpp
+mttrees/cfuncs_fast/mt_ctree_selfhash_f32.cpp
+
+# Local venvs / IDE
+.venv/
+.idea/
+.vscode/
+
+# Compute artifacts (not for git)
+results/
+logs/
+*.log
+
+# Large benchmark data — fetched on demand by scripts/fetch_monash_data.py.
+# Demo data (m1_yearly, mackey_glass) is committed; the full dump is not.
+data/*.tsf
+!data/m1_yearly_dataset.tsf
+!data/mackey_glass_dataset.tsf
+
+# Local OS
+.DS_Store
+Thumbs.db

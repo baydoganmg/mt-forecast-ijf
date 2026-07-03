@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+title: "mt-forecast: Multi-target tree learning for time series forecasting"
+message: "If you use this software, please cite the accompanying paper."
+type: software
+authors:
+  - family-names: "Baydoğan"
+    given-names: "Mustafa Gökçe"
+license: MIT
+repository-code: "https://github.com/baydoganmg/mt-forecast-ijf"
+preferred-citation:
+  type: article
+  title: "Enhanced Tree-Based Learners for Forecasting Tasks"
+  authors:
+    - family-names: "Baydoğan"
+      given-names: "Mustafa Gökçe"
+  journal: "International Journal of Forecasting"
+  year: 2026
+  # Volume / issue / pages / DOI to be filled after IJF acceptance.
