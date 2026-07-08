@@ -247,7 +247,7 @@ def eval_tree_methods(train_data, test_data, sm_series, scales_s, scaling: str):
                                  ("seas",  (0.0, 0.5)),
                                  ("both",  (0.5, 0.5))]:
         tree = CTree_MT(max_depth=MAX_DEPTH, min_samples_leaf=MIN_LEAF, mtry=1.0,
-                        samp_frac=1.0, prebin=True, n_discrete_lev=32)
+                        samp_frac=1.0, prebin=False, n_discrete_lev=32)
         tree.arrangeObjective(train_data, lambda_decay=1.0,
                               objective_weights=[1.0, lam, bet])
         tree.fit(train_data.x, train_data.y)
